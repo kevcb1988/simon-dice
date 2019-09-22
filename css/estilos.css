@@ -39,6 +39,7 @@ header{
     background: blue;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    border-top-left-radius: 100%;
 }
 
 .color-violeta{
@@ -47,6 +48,7 @@ header{
     background: blue;
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+    border-top-right-radius: 100%;
 }
 
 .color-naranja{
@@ -55,6 +57,7 @@ header{
     grid-column: 2 / 3;
     grid-row: 3 / 4;
     background-color: aqua;
+    border-bottom-left-radius: 100%;
 }
 
 .color-verde{
@@ -63,15 +66,23 @@ header{
     grid-column: 3 / 4;
     grid-row: 3 / 4;
     background-color: green;
+    border-bottom-right-radius: 100%;
 }
 
 .btn-iniciar{
-    width: 200px;
+    width: 300px;
     height: 50px;
     background-color: aliceblue;
     border: none;
     border-radius: 50px;
     margin: 20px 0;
+    position: absolute;
+    top: calc(50% - 66px);
+    left: calc(50% - 150px);
+    border: 3px solid #999;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 1.15rem;
 }
 
 footer{
