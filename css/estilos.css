@@ -33,40 +33,60 @@ header{
     display: grid;
 }
 
-.color-celeste{
+#color-celeste{
     width: 200px;
     height: 200px;
-    background: blue;
+    background: #08a2df;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     border-top-left-radius: 100%;
 }
 
-.color-violeta{
+#color-celeste.light{
+    background-color: #61f2f5;
+    box-shadow: 0 0 15px #61f2f5;
+}
+
+#color-violeta{
     width: 200px;
     height: 200px;
-    background: blue;
+    background: #a72693;
     grid-column: 3 / 4;
     grid-row: 2 / 3;
     border-top-right-radius: 100%;
 }
 
-.color-naranja{
+#color-violeta.light{
+    background-color: #f407d0;
+    box-shadow: 0 0 15px #f407d0;
+}
+
+#color-naranja{
     width: 200px;
     height: 200px;
     grid-column: 2 / 3;
     grid-row: 3 / 4;
-    background-color: aqua;
+    background-color: #f75f00;
     border-bottom-left-radius: 100%;
 }
 
-.color-verde{
+#color-naranja.light{
+    background-color: #d59602;
+    box-shadow: 0 0 15px #d59602;
+}
+
+#color-verde{
     width: 200px;
     height: 200px;
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-    background-color: green;
+    background-color: #a8ff3e;
     border-bottom-right-radius: 100%;
+}
+
+#color-verde.light{
+    background-color: #8eff05;
+    box-shadow: 0 0 15px #8eff05;
 }
 
 .btn-iniciar{
@@ -83,6 +103,11 @@ header{
     color: #333;
     text-transform: uppercase;
     font-size: 1.15rem;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
 }
 
 footer{

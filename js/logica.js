@@ -16,6 +16,7 @@ class Juego{
     }
 
     inicializar(){
+        this.elegirColor = this.elegirColor.bind(this);
         btn_iniciar_juego.classList.add('hide');
         this.nivel = 1;
         this.colores = {
@@ -31,7 +32,9 @@ class Juego{
     }
 
     siguienteNivel(){
+        this.subNivel = 0;
         this.iluminarSecuencia();
+        this.agregarEventosClick();
     }
 
     transformarNumero_a_color(numero){
@@ -47,9 +50,22 @@ class Juego{
         }        
     }
     
+    transformarColor_a_numero(color){
+        switch(color){
+            case 'celeste':
+                return 0;
+            case 'violeta':
+                return 1;
+            case 'naranja':
+                return 2;
+            case 'verde':
+                return 3;
+        }        
+    }
+
     iluminarSecuencia(){
-        for(var i = 0; i < this.nivel; i++){
-            var color = this.transformarNumero_a_color(this.secuencia[i]);
+        for(let i = 0; i < this.nivel; i++){
+            const color = this.transformarNumero_a_color(this.secuencia[i]);
             setTimeout(() => this.iluminarColor(color), 1000 * i)
         }
     }
@@ -61,6 +77,22 @@ class Juego{
     
     apagarColor(color){
         this.colores[color].classList.remove('light');
+    }
+
+    agregarEventosClick(){
+        this.colores.celeste.addEventListener('click', this.elegirColor);
+        this.colores.violeta.addEventListener('click', this.elegirColor);
+        this.colores.naranja.addEventListener('click', this.elegirColor);
+        this.colores.verde.addEventListener('click', this.elegirColor);
+    }
+
+    elegirColor(e){
+        const nombreColor = e.target.dataset.color
+        const numeroColor = transformarColor_a_numero(nombreColor);
+        this.iluminarColor(nombreColor);
+        if(numeroColor === this.secuencia[this.subNivel]){
+            this.subNivel++
+        }
     }
     
 }
